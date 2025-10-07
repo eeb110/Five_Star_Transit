@@ -1,92 +1,57 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet, ImageBackground } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { View, Text, TextInput, StyleSheet, ImageBackground, ScrollView } from 'react-native';
 
-
-const Tab = createBottomTabNavigator();
-
-function GoHome() {
-  return (
-    <View style={styles.screen}>
-      <Text>Go Home</Text>
-    </View>
-  );
-}
-
-function SettingsScreen() {
-  return (
-    <View style={styles.screen}>
-      <Text>Settings</Text>
-    </View>
-  );
-}
-
-function SearchScreen() {
-  return (
-    <View style={styles.screen}>
-      <Text>Search</Text>
-    </View>
-  );
-}
-
-function BookmarksScreen() {
-  return (
-    <View style={styles.screen}>
-      <Text>Bookmarks</Text>
-    </View>
-  );
-}
-
-function TicketsScreen() {
-  return (
-    <View style={styles.screen}>
-      <Text>Tickets</Text>
-    </View>
-  );
-}
-
-function MyTabs() {
-  return (
-    <Tab.Navigator
-      screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: '#007bff',
-        tabBarInactiveTintColor: 'gray',
-      }}
-    >
-      <Tab.Screen name="Home" component={GoHome} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
-      <Tab.Screen name="Search" component={SearchScreen} />
-      <Tab.Screen name="Bookmarks" component={BookmarksScreen} />
-      <Tab.Screen name="Tickets" component={TicketsScreen} />
-    </Tab.Navigator>
-  );
-}
 
 const App = () => {
-  return (
-    <ImageBackground
-      source={require('./assets/Map.png')}
-      style={styles.background}
-      resizeMode="cover"
-    >
-      <NavigationContainer>
-        <MyTabs />
-      </NavigationContainer>
-    </ImageBackground>
-  );
-};
+    return (
+        <ImageBackground source={require('./assets/Map.png')}
+        style={styles.background} resizeMode="cover" >
+            <ScrollView contentContainerStyle={styles.scrollContent}>
+                <View style={styles.searchContainer}>
+                    <TextInput style={styles.input} placeholder="Search bus routes" placeholderTextColor="#555" />
+                </View>
+            </ScrollView>
+        </ImageBackground> ); };
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-  },
-  screen: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+    background: {
+        flex: 1,
+        width: '100%',
+        height: '100%',
+        },
+    scrollContent: {
+        flexGrow: 1,
+        padding: 20,
+        paddingTop: 100,
+        },
+    headerText: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: '#222',
+        marginBottom: 20,
+        },
+    searchContainer: {
+        backgroundColor: 'rgba(255, 255, 255, 0.85)',
+        borderRadius: 10,
+        padding: 15,
+        shadowColor: '#000',
+        shadowOpacity: 0.1,
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 4,
+        elevation: 3, },
+    label: {
+        fontSize: 16,
+        fontWeight: '600',
+        marginBottom: 8,
+        },
+    input: {
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        borderRadius: 5,
+        paddingHorizontal: 10,
+        },
+    });
 
 export default App;
