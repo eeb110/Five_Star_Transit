@@ -1,51 +1,92 @@
 import React from 'react';
-import {View, Text, Image, ScrollView, TextInput, StyleSheet} from 'react-native';
+import { View, Text, TextInput, StyleSheet, ImageBackground } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
+const Tab = createBottomTabNavigator();
+
+function GoHome() {
+  return (
+    <View style={styles.screen}>
+      <Text>Go Home</Text>
+    </View>
+  );
+}
+
+function SettingsScreen() {
+  return (
+    <View style={styles.screen}>
+      <Text>Settings</Text>
+    </View>
+  );
+}
+
+function SearchScreen() {
+  return (
+    <View style={styles.screen}>
+      <Text>Search</Text>
+    </View>
+  );
+}
+
+function BookmarksScreen() {
+  return (
+    <View style={styles.screen}>
+      <Text>Bookmarks</Text>
+    </View>
+  );
+}
+
+function TicketsScreen() {
+  return (
+    <View style={styles.screen}>
+      <Text>Tickets</Text>
+    </View>
+  );
+}
+
+function MyTabs() {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: '#007bff',
+        tabBarInactiveTintColor: 'gray',
+      }}
+    >
+      <Tab.Screen name="Home" component={GoHome} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen name="Search" component={SearchScreen} />
+      <Tab.Screen name="Bookmarks" component={BookmarksScreen} />
+      <Tab.Screen name="Tickets" component={TicketsScreen} />
+    </Tab.Navigator>
+  );
+}
 
 const App = () => {
   return (
-    <ScrollView style={styles.screenContainer}>
-      <Text style={styles.headerText}>Welcome to BusTracker</Text>
-      <View>
-        <Text>Search bus routes</Text>
-        <Image
-          source={require('./assets/bus.png')}
-          style={{width: 370, height: 200}}
-        />
-      </View>
-      <TextInput
-        style={{
-          height: 40,
-          margin: 20,
-          borderColor: 'gray',
-          borderWidth: 1,
-        }}
-        defaultValue="Search"
-      />
-    </ScrollView>
+    <ImageBackground
+      source={require('./assets/Map.png')}
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <NavigationContainer>
+        <MyTabs />
+      </NavigationContainer>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  screenContainer: {
-    padding: 20, // adds padding around the entire BusStop screen
-    paddingTop: 100,
-    backgroundColor: '#f8f9fa', // optional for contrast
+  background: {
+    flex: 1,
   },
-  busContainer: {
-    marginBottom: 10, // spacing between buses
-    padding: 10, // padding inside each Bus component
-    backgroundColor: '#ffffff',
-    borderRadius: 8,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowOffset: {width: 0, height: 2},
-    shadowRadius: 4,
-    elevation: 2, // Android shadow
+  screen: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  headerText: {
-      fontSize: 20,
-      fontWeight: 'bold',
-      },
 });
 
 export default App;
