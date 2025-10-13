@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import { View, Text, TextInput, StyleSheet, ImageBackground, ScrollView } from 'react-native';
 
@@ -9,7 +10,7 @@ const App = () => {
         style={styles.background}
         resizeMode="cover"
       >
-        {/* Search bar at top */}
+        { Search bar at top }
         <View style={styles.searchContainer}>
           <TextInput
             style={styles.input}
@@ -18,11 +19,11 @@ const App = () => {
           />
         </View>
 
-        {/* Scrollable content below search bar */}
+        { Scrollable content below search bar }
         <ScrollView contentContainerStyle={styles.scrollContent}>
         </ScrollView>
 
-        {/* Fixed bottom bar */}
+        { Fixed bottom bar }
         <View style={styles.bottomBar}>
           <View style={styles.item}><Text style={styles.text}>Go Home</Text></View>
           <View style={styles.item}><Text style={styles.text}>Settings</Text></View>
@@ -94,3 +95,43 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+*/
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import {
+  createNativeStackNavigator,
+} from "@react-navigation/native-stack";
+import { enableScreens } from "react-native-screens";
+
+import HomeScreen from "./screens/HomeScreen";
+import DetailsScreen from "./screens/DetailsScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import { RootStackParamList } from "./navigation/types";
+
+enableScreens(true);
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Welcome" }}
+        />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={({ route }) => ({
+            title: route.params?.name
+              ? `${route.params.name}'s Profile`
+              : "Profile",
+          })}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
