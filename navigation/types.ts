@@ -1,5 +1,7 @@
 export type RootStackParamList = {
   Home: undefined;
-  Details: { itemId: number };
+  Tickets: { itemId: number };
   Settings: { name?: string } | undefined;
+  Bookmarks: undefined;
+  Search: undefined;
 };
