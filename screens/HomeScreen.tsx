@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, TextInput, ImageBackground, ScrollView, StyleSheet } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from './navigation/types';
@@ -7,6 +7,13 @@ import Layout from './components/Layout'; // Import Layout
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export default function HomeScreen({ navigation }: Props) {
+  const [query, setQuery] = useState('');
+
+  const handleSearchSubmit = () => {
+    // Navigate to Search screen and optionally pass query
+    navigation.navigate('Search', { query });
+  };
+
   return (
     <Layout navigation={navigation}>
       <ImageBackground
@@ -20,6 +27,10 @@ export default function HomeScreen({ navigation }: Props) {
             style={styles.input}
             placeholder="Search bus routes"
             placeholderTextColor="#555"
+            value={query}
+            onChangeText={setQuery}
+            returnKeyType="search" // changes keyboard return key to "Search"
+            onSubmitEditing={handleSearchSubmit} // called when user presses Enter
           />
         </View>
 
