@@ -8,13 +8,21 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Search'>;
 
 export default function SearchScreen({ navigation }: Props) {
   return (
-    <Layout navigation={navigation}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Search</Text>
-        <Text style={styles.paragraph}>Here you can view and manage your search routes.</Text>
-      </View>
-    </Layout>
-  );
+      <Layout navigation={navigation}>
+        <View style={styles.container}>
+          <Text style={styles.title}>Search</Text>
+          <Text style={styles.paragraph}>Here you can view and manage your search routes.</Text>
+
+          {/* Button to navigate to SearchPaige */}
+          <View style={{ marginTop: 20 }}>
+            <Button
+              title="Go to SearchPaige"
+              onPress={() => navigation.navigate('SearchPaige')}
+            />
+          </View>
+        </View>
+      </Layout>
+    );
 }
 
 const styles = StyleSheet.create({

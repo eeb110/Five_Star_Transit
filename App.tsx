@@ -10,6 +10,7 @@ import TicketsScreen from "./screens/TicketsScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import BookmarksScreen from "./screens/BookmarksScreen";
 import SearchScreen from "./screens/SearchScreen";
+import SearchPaige from "./screens/SearchPaige";
 import { RootStackParamList } from "./navigation/types";
 
 enableScreens(true);
@@ -48,6 +49,12 @@ export default function App() {
           name="Search"
           component={SearchScreen}
           options={{ title: "Search" }}
+        />
+
+        <Stack.Screen
+          name="SearchPaige"
+          component={SearchPaige}
+          options={{ title: "SearchPaige" }}
         />
 
       </Stack.Navigator>
