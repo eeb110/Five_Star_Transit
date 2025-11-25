@@ -21,22 +21,27 @@ export default function SearchScreen({ navigation }: Props) {
 
         <View style={styles.middleBar}>
             <Pressable style={styles.item} onPress={() => navigation.navigate('Home')}>
+              <Image source={require('./assets/car.png')} style={styles.icon} />
               <Text style={styles.text}>Drive</Text>
             </Pressable>
 
             <Pressable style={styles.item} onPress={() => navigation.navigate('Home')}>
+              <Image source={require('./assets/busicon.png')} style={styles.icon} />
               <Text style={styles.text}>Bus</Text>
             </Pressable>
 
             <Pressable style={styles.item} onPress={() => navigation.navigate('Settings')}>
+              <Image source={require('./assets/walk.png')} style={styles.icon} />
               <Text style={styles.text}>Walk</Text>
             </Pressable>
 
             <Pressable style={styles.item} onPress={() => navigation.navigate('Bookmarks')}>
+              <Image source={require('./assets/bike.png')} style={styles.icon} />
               <Text style={styles.text}>Bike</Text>
             </Pressable>
 
             <Pressable style={styles.item} onPress={() => navigation.navigate('Tickets')}>
+              <Image source={require('./assets/uber.png')} style={styles.icon} />
               <Text style={styles.text}>Uber</Text>
             </Pressable>
           </View>
@@ -96,7 +101,10 @@ const styles = StyleSheet.create({
   },
 
   item: {
-    paddingHorizontal: 10,
+    flex: 1,
+    alignItems: 'center',      // centers children horizontally
+    justifyContent: 'center',  // optional: centers vertically
+    flexDirection: 'column',   // stack image above text
     paddingVertical: 6,
   },
 
@@ -106,11 +114,16 @@ const styles = StyleSheet.create({
   },
   fillerBox: {
     position: 'absolute',
-    top: '65%',        // just below middleBar
+    top: '67%',        // just below middleBar
     bottom: 60,        // leave space for bottom bar from Layout
     left: 0,
     right: 0,
     backgroundColor: '#ffffff',
     // remove zIndex
   },
+  icon: {
+        width: 24,
+        height: 24,
+        resizeMode: 'contain'
+      },
 });
