@@ -14,10 +14,13 @@ export default function SearchScreen({ navigation }: Props) {
         style={styles.background}
         resizeMode="cover"
         >
-        <Image
+        <View style={styles.routeImageWrapper}>
+          <Image
             source={require('./assets/BusRoute.png')}
-            style={{ width: 200, height: 200 }}
-        />
+            style={{ width: 250, height: 450 }}
+          />
+        </View>
+
 
         <View style={styles.middleBar}>
             <Pressable style={styles.item} onPress={() => navigation.navigate('Home')}>
@@ -46,14 +49,15 @@ export default function SearchScreen({ navigation }: Props) {
             </Pressable>
           </View>
 
-
-          <View style={{ marginTop: 20 }}>
-                      <Button
-                        title="Go to SearchPaige"
-                        onPress={() => navigation.navigate('SearchPaige')}
-                      />
-                    </View>
+          <View style={styles.searchButtonWrapper}>
+            <Button
+              title="Go to SearchPaige"
+              onPress={() => navigation.navigate('SearchPaige')}
+            />
+          </View>
           <View style={styles.fillerBox} />
+
+
 
       </ImageBackground>
     </Layout>
@@ -126,4 +130,21 @@ const styles = StyleSheet.create({
         height: 24,
         resizeMode: 'contain'
       },
+  routeImageWrapper: {
+    position: 'absolute',
+    top: '10%',
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    zIndex: 5,
+  },
+  searchButtonWrapper: {
+    position: 'absolute',
+    top: '75%',    // adjust as needed
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    zIndex: 10,    // ⬅ makes it appear in front of fillerBox
+  },
+
 });

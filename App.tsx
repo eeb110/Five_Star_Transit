@@ -24,37 +24,33 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: "Welcome" }}
+          options={{ headerShown: false, }}
         />
         <Stack.Screen
             name="Tickets"
             component={TicketsScreen}
-            options={{ title: "Tickets" }}
+            options={{ headerShown: false, }}
         />
         <Stack.Screen
           name="Settings"
           component={SettingsScreen}
-          options={({ route }) => ({
-            title: route.params?.name
-              ? `${route.params.name}'s Settings`
-              : "Settings",
-          })}
+          options={{ headerShown: false, }}
         />
         <Stack.Screen
           name="Bookmarks"
           component={BookmarksScreen}
-          options={{ title: "Bookmarks" }}
+          options={{ headerShown: false, }}
         />
         <Stack.Screen
           name="Search"
           component={SearchScreen}
-          options={{ title: "Search" }}
+          options={{ headerShown: false, }}
         />
 
         <Stack.Screen
           name="SearchPaige"
           component={SearchPaige}
-          options={{ title: "SearchPaige" }}
+          options={{ title: "Navigation" }}
         />
 
       </Stack.Navigator>
