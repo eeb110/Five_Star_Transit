@@ -4,6 +4,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from './navigation/types';
 import Layout from './components/Layout';
 import BusInfoBox from './components/BusInfoBox';
+import RouteCard from "./components/RouteCard";
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Search'>;
 
@@ -37,12 +38,11 @@ export default function SearchScreen({ navigation }: Props) {
           color="red"
         />
 
-
-
         <View style={styles.middleBar}>
           <View style={styles.item}>
             <Image source={require('./assets/car.png')} style={styles.icon} />
             <Text style={styles.text}>Drive</Text>
+            <Text style={styles.smalltext}>9 mins</Text>
           </View>
 
           <View style={styles.item}>
@@ -51,24 +51,27 @@ export default function SearchScreen({ navigation }: Props) {
               style={[styles.icon, { tintColor: 'green' }]}
             />
             <Text style={[styles.text, { color: 'green' }]}>Bus</Text>
+            <Text style={[styles.smalltext, { color: 'green'}]}>15 mins</Text>
           </View>
 
           <View style={styles.item}>
             <Image source={require('./assets/walk.png')} style={styles.icon} />
             <Text style={styles.text}>Walk</Text>
+            <Text style={styles.smalltext}>45 mins</Text>
           </View>
 
           <View style={styles.item}>
             <Image source={require('./assets/bike.png')} style={styles.icon} />
             <Text style={styles.text}>Bike</Text>
+            <Text style={styles.smalltext}>14 mins</Text>
           </View>
 
           <View style={styles.item}>
             <Image source={require('./assets/uber.png')} style={styles.icon} />
             <Text style={styles.text}>Uber</Text>
+            <Text style={styles.smalltext}>10 mins</Text>
           </View>
         </View>
-
 
           <View style={styles.searchButtonWrapper}>
             <Button
@@ -76,7 +79,29 @@ export default function SearchScreen({ navigation }: Props) {
               onPress={() => navigation.navigate('SearchPaige')}
             />
           </View>
-          <View style={styles.fillerBox} />
+
+          
+          <View style={styles.fillerBox}>
+            <RouteCard
+              startTime="3:30 PM"
+              endTime="3:45 PM"
+              walk1={2}
+              walk2={3}
+              busRoute="71A/71B/71C"
+              leaveTime="3:32 PM"
+              status="On time"
+            />
+
+            <RouteCard
+              startTime="3:45 PM"
+              endTime="4:10 PM"
+              walk1={4}
+              walk2={5}
+              busRoute="81/83"
+              leaveTime="3:47 PM"
+              status="On time"
+            />
+          </View>
 
 
 
@@ -138,13 +163,19 @@ const styles = StyleSheet.create({
   },
 
   fillerBox: {
-    position: 'absolute',
-    top: '67%',        // just below middleBar
-    bottom: 60,        // leave space for bottom bar from Layout
+    position: "absolute",
+    top: "68.75%",
+    bottom: 60, // keeps space for bottom nav
     left: 0,
     right: 0,
-    backgroundColor: '#ffffff',
-    // remove zIndex
+    backgroundColor: "white",
+    paddingTop: 20,
+    paddingHorizontal: 10,
+  },
+
+  smalltext: {
+      fontSize: 12,
+      fontWeight: '400',
   },
   icon: {
         width: 24,
