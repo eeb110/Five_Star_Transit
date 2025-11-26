@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Pressable, Button, ImageBackground, Image } fro
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from './navigation/types';
 import Layout from './components/Layout';
+import BusInfoBox from './components/BusInfoBox';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Search'>;
 
@@ -20,34 +21,54 @@ export default function SearchScreen({ navigation }: Props) {
             style={{ width: 250, height: 450 }}
           />
         </View>
+        <BusInfoBox
+          text1="71A/71B/71C"
+          text2="in 10 mins"
+          top={490}
+          left={50}
+          color="green"
+        />
+
+        <BusInfoBox
+          text1="81/83"
+          text2="in 12 mins"
+          top={500}
+          left={235}
+          color="red"
+        />
+
 
 
         <View style={styles.middleBar}>
-            <Pressable style={styles.item} onPress={() => navigation.navigate('Home')}>
-              <Image source={require('./assets/car.png')} style={styles.icon} />
-              <Text style={styles.text}>Drive</Text>
-            </Pressable>
-
-            <Pressable style={styles.item} onPress={() => navigation.navigate('Home')}>
-              <Image source={require('./assets/busicon.png')} style={styles.icon} />
-              <Text style={styles.text}>Bus</Text>
-            </Pressable>
-
-            <Pressable style={styles.item} onPress={() => navigation.navigate('Settings')}>
-              <Image source={require('./assets/walk.png')} style={styles.icon} />
-              <Text style={styles.text}>Walk</Text>
-            </Pressable>
-
-            <Pressable style={styles.item} onPress={() => navigation.navigate('Bookmarks')}>
-              <Image source={require('./assets/bike.png')} style={styles.icon} />
-              <Text style={styles.text}>Bike</Text>
-            </Pressable>
-
-            <Pressable style={styles.item} onPress={() => navigation.navigate('Tickets')}>
-              <Image source={require('./assets/uber.png')} style={styles.icon} />
-              <Text style={styles.text}>Uber</Text>
-            </Pressable>
+          <View style={styles.item}>
+            <Image source={require('./assets/car.png')} style={styles.icon} />
+            <Text style={styles.text}>Drive</Text>
           </View>
+
+          <View style={styles.item}>
+            <Image
+              source={require('./assets/busicon.png')}
+              style={[styles.icon, { tintColor: 'green' }]}
+            />
+            <Text style={[styles.text, { color: 'green' }]}>Bus</Text>
+          </View>
+
+          <View style={styles.item}>
+            <Image source={require('./assets/walk.png')} style={styles.icon} />
+            <Text style={styles.text}>Walk</Text>
+          </View>
+
+          <View style={styles.item}>
+            <Image source={require('./assets/bike.png')} style={styles.icon} />
+            <Text style={styles.text}>Bike</Text>
+          </View>
+
+          <View style={styles.item}>
+            <Image source={require('./assets/uber.png')} style={styles.icon} />
+            <Text style={styles.text}>Uber</Text>
+          </View>
+        </View>
+
 
           <View style={styles.searchButtonWrapper}>
             <Button
@@ -111,11 +132,11 @@ const styles = StyleSheet.create({
     flexDirection: 'column',   // stack image above text
     paddingVertical: 6,
   },
-
   text: {
     fontSize: 16,
     fontWeight: '600',
   },
+
   fillerBox: {
     position: 'absolute',
     top: '67%',        // just below middleBar
@@ -144,7 +165,8 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     alignItems: 'center',
-    zIndex: 10,    // ⬅ makes it appear in front of fillerBox
+    zIndex: 10,
   },
+
 
 });
