@@ -83,6 +83,8 @@ export default function SearchScreen({ navigation }: Props) {
               leaveTime="3:32 PM"
               status="On time"
               onGoPress={() => navigation.navigate("SearchPaige")}
+              ETA="15 mins"
+              statusColor="#67D67D"
             />
 
             <RouteCard
@@ -92,8 +94,10 @@ export default function SearchScreen({ navigation }: Props) {
               walk2={5}
               busRoute="81/83"
               leaveTime="3:47 PM"
-              status="On time"
+              status="Delayed 5 mins"
               onGoPress={() => navigation.navigate("SearchPaige")}
+              ETA="20 mins"
+              statusColor="red"
             />
           </View>
 

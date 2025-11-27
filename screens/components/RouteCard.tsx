@@ -10,6 +10,8 @@ export default function RouteCard({
   leaveTime,
   status,
   onGoPress,
+  ETA,
+  statusColor,
 }) {
   return (
     <View style={styles.card}>
@@ -47,8 +49,9 @@ export default function RouteCard({
 
         {/* Status + Go button UNDER it */}
         <View style={styles.statusWrapper}>
-          <Text style={styles.statusMins}>15 mins</Text>
-          <Text style={styles.statusGreen}>{status}</Text>
+          <Text style={styles.statusMins}>{ETA}</Text>
+          <Text style={[styles.statusGreen, { color: statusColor }]}>{status}</Text>
+
 
           <Pressable style={styles.goButton} onPress={onGoPress}>
             <Text style={styles.goText}>Go &gt;</Text>
@@ -126,11 +129,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 12,
   },
-  statusGreen: {
-    color: "#4cff4c",
-    fontSize: 12,
-    marginBottom: 2,            // was 6 → reduces card height
-  },
+
 
   goButton: {
     backgroundColor: "#5D7F69",
