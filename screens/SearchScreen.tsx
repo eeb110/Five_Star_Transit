@@ -73,14 +73,6 @@ export default function SearchScreen({ navigation }: Props) {
           </View>
         </View>
 
-          <View style={styles.searchButtonWrapper}>
-            <Button
-              title="Go to SearchPaige"
-              onPress={() => navigation.navigate('SearchPaige')}
-            />
-          </View>
-
-          
           <View style={styles.fillerBox}>
             <RouteCard
               startTime="3:30 PM"
@@ -90,6 +82,7 @@ export default function SearchScreen({ navigation }: Props) {
               busRoute="71A/71B/71C"
               leaveTime="3:32 PM"
               status="On time"
+              onGoPress={() => navigation.navigate("SearchPaige")}
             />
 
             <RouteCard
@@ -100,8 +93,10 @@ export default function SearchScreen({ navigation }: Props) {
               busRoute="81/83"
               leaveTime="3:47 PM"
               status="On time"
+              onGoPress={() => navigation.navigate("SearchPaige")}
             />
           </View>
+
 
 
 
