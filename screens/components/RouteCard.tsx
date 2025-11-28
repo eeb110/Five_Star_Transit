@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   leaveText: {
-    color: "#9fff9f",
+    color: "white",
     fontSize: 12,
     marginTop: 2,
   },

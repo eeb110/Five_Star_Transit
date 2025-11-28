@@ -24,7 +24,7 @@ export default function SearchScreen({ navigation }: Props) {
         </View>
         <BusInfoBox
           text1="71A/71B/71C"
-          text2="in 10 mins"
+          text2="in 5 mins"
           top={490}
           left={50}
           color="green"
@@ -32,7 +32,7 @@ export default function SearchScreen({ navigation }: Props) {
 
         <BusInfoBox
           text1="81/83"
-          text2="in 12 mins"
+          text2="in 22 mins"
           top={500}
           left={235}
           color="red"
@@ -89,11 +89,11 @@ export default function SearchScreen({ navigation }: Props) {
 
             <RouteCard
               startTime="3:45 PM"
-              endTime="4:10 PM"
+              endTime="4:05 PM"
               walk1={4}
               walk2={5}
               busRoute="81/83"
-              leaveTime="3:47 PM"
+              leaveTime="3:49 PM"
               status="Delayed 5 mins"
               onGoPress={() => navigation.navigate("SearchPaige")}
               ETA="20 mins"
