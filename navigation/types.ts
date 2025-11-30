@@ -5,4 +5,6 @@ export type RootStackParamList = {
   Bookmarks: undefined;
   Search: undefined;
   SearchPaige: undefined;
+  AccessibilitySafety: undefined;
+  Notifications: undefined;
 };

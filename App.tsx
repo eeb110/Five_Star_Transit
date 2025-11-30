@@ -11,6 +11,10 @@ import SettingsScreen from "./screens/SettingsScreen";
 import BookmarksScreen from "./screens/BookmarksScreen";
 import SearchScreen from "./screens/SearchScreen";
 import SearchPaige from "./screens/SearchPaige";
+import AccessibilitySafety from "./screens/AccessibilitySafetyScreen";
+import Notifications from "./screens/NotificationsScreen";
+
+
 import { RootStackParamList } from "./navigation/types";
 
 enableScreens(true);
@@ -37,6 +41,14 @@ export default function App() {
           options={{ headerShown: false, }}
         />
         <Stack.Screen
+          name="AccessibilitySafety"
+          component={AccessibilitySafety}
+        />
+        <Stack.Screen
+        name="Notifications"
+        component={Notifications}
+         />
+        <Stack.Screen
           name="Bookmarks"
           component={BookmarksScreen}
           options={{ headerShown: false, }}
@@ -46,7 +58,6 @@ export default function App() {
           component={SearchScreen}
           options={{ headerShown: false, }}
         />
-
         <Stack.Screen
           name="SearchPaige"
           component={SearchPaige}
