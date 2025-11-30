@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Switch, ScrollView } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../navigation/types";
-import TransportPriorityList from "../components/TransportPriorityList";
+import TransportPriorityList from "./components/TransportPriorityList";
 
 
 type Props = NativeStackScreenProps<RootStackParamList, "AccessibilitySafety">;
