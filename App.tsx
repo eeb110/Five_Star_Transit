@@ -13,6 +13,8 @@ import SearchScreen from "./screens/SearchScreen";
 import SearchPaige from "./screens/SearchPaige";
 import AccessibilitySafety from "./screens/AccessibilitySafetyScreen";
 import Notifications from "./screens/NotificationsScreen";
+import ConfirmTicket from "./screens/ConfirmTicketScreen";
+import TicketConfirmed from "./screens/TicketConfirmedScreen";
 
 
 
@@ -64,7 +66,16 @@ export default function App() {
           component={SearchPaige}
           options={{ title: "Navigation" }}
         />
-
+         <Stack.Screen
+                  name="ConfirmTicket"
+                  component={ConfirmTicket}
+                  options={{ title: "Navigation" }}
+                />
+            <Stack.Screen
+            name="TicketConfirmed"
+            component={TicketConfirmed}
+            options={{ title: "Navigation" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

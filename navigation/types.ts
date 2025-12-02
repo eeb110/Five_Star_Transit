@@ -7,5 +7,6 @@ export type RootStackParamList = {
   SearchPaige: undefined;
   AccessibilitySafety: undefined;
   Notifications: undefined;
-  TicketScreen: undefined;
+  TicketConfirmed: undefined;
+  ConfirmTicket: undefined;
 };
