@@ -24,10 +24,14 @@ export default function TicketsScreen({ navigation }: Props) {
 
   return (
     <Layout navigation={navigation}>
-      <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 120 }}>
-
-
-        {/* Fare Type Dropdown */}
+<ScrollView
+  style={styles.container}
+  contentContainerStyle={{
+    flex: 1,
+    paddingBottom: 120,
+    justifyContent: 'center',
+  }}
+>        {/* Fare Type Dropdown */}
         <Pressable
           style={[styles.dropdown, fareTypeOpen && styles.dropdownActive]}
           onPress={() => setFareTypeOpen(!fareTypeOpen)}>
@@ -83,22 +87,11 @@ export default function TicketsScreen({ navigation }: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#1e3a56',
-    padding: 20,
-  },
-  headerImageContainer: {
-    width: '100%',
-    height: 200,
-    borderRadius: 12,
-    overflow: 'hidden',
-    marginBottom: 20,
-  },
-  headerImage: {
-    width: '100%',
-    height: '100%',
-  },
+container: {
+  flex: 1,
+  backgroundColor: '#1e3a56',
+  padding: 20,
+},
   dropdown: {
     backgroundColor: 'white',
     flexDirection: 'row',
