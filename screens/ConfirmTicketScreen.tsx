@@ -64,12 +64,7 @@ export default function ConfirmTicketScreen({ navigation, route }: Props) {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Pressable
-            style={styles.cancelButton}
-            onPress={() => navigation.goBack()}
-          >
-            <Text style={styles.cancelButtonText}>Cancel</Text>
-          </Pressable>
+
 
           <Pressable
             style={styles.confirmButton}

@@ -69,12 +69,13 @@ export default function App() {
          <Stack.Screen
                   name="ConfirmTicket"
                   component={ConfirmTicket}
-                  options={{ title: "Navigation" }}
+                  options={{ title: "Ticket" }}
                 />
             <Stack.Screen
             name="TicketConfirmed"
             component={TicketConfirmed}
-            options={{ title: "Navigation" }}
+            options={{ title: "Ticket" }}
+
         />
       </Stack.Navigator>
     </NavigationContainer>
