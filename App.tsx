@@ -6,13 +6,14 @@ import {
 import { enableScreens } from "react-native-screens";
 
 import HomeScreen from "./screens/HomeScreen";
-import TicketsScreen from "./screens/TicketsScreen";
+import TicketScreen from "./screens/TicketsScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import BookmarksScreen from "./screens/BookmarksScreen";
 import SearchScreen from "./screens/SearchScreen";
 import SearchPaige from "./screens/SearchPaige";
 import AccessibilitySafety from "./screens/AccessibilitySafetyScreen";
 import Notifications from "./screens/NotificationsScreen";
+
 
 
 import { RootStackParamList } from "./navigation/types";
@@ -32,7 +33,7 @@ export default function App() {
         />
         <Stack.Screen
             name="Tickets"
-            component={TicketsScreen}
+            component={TicketScreen}
             options={{ headerShown: false, }}
         />
         <Stack.Screen
