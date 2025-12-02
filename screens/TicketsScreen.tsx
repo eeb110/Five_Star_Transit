@@ -133,7 +133,7 @@ export default function TicketsScreen({ navigation }: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0d5f7d',
+    backgroundColor: '#1F405C',
     padding: 16,
   },
   section: {
