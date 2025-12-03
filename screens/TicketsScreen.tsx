@@ -16,7 +16,7 @@ export default function TicketsScreen({ navigation }: Props) {
     "Incline Only": [
       { name: "3 Hr Round Trip", price: "$2.75" },
     ],
-    "Bus + Incline Pass": [
+    "Bus Pass (Incline Included)": [
       { name: "3 Hour Pass", price: "$2.75" },
       { name: "Day Pass", price: "$7.00" },
       { name: "7 Day Pass", price: "$25.00" },
