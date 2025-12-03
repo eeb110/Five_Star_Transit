@@ -123,27 +123,13 @@ export default function SearchPaige({ navigation }: Props) {
             </View>
             <View style={styles.stepContent}>
               <View style={styles.stopRow}>
-                <Text style={styles.stopText}>Oakland</Text>
+                <Text style={styles.stopText}>Board Bus at Forbes Ave/Craft Ave</Text>
                 <Text style={styles.stopTime}>at 3:32 PM</Text>
               </View>
             </View>
           </View>
 
-          {/* Get off at Forbes Ave */}
-          <View style={styles.stepContainer}>
-            <View style={styles.timeline}>
-              <View style={[styles.timelineDot, styles.busStop]} />
-              <View style={styles.timelineLine} />
-            </View>
-            <View style={styles.stepContent}>
-              <View style={styles.routeCard}>
-                <View style={styles.busHeader}>
-                  <Image source={require('./assets/busicon.png')} style={styles.busIcon} />
-                  <Text style={styles.busRouteText}>Get off at Forbes Ave at Halket Ave</Text>
-                </View>
-              </View>
-            </View>
-          </View>
+
 
           {/* Transfer stops */}
           <View style={styles.stepContainer}>
@@ -155,13 +141,14 @@ export default function SearchPaige({ navigation }: Props) {
               <View style={styles.transferRow}>
                 <View style={styles.transferDot} />
                 <View style={{ flex: 1 }}>
-                  <Text style={styles.transferText}>Penn Ave at Sheridan Ave</Text>
+                  <Text style={styles.transferText}>Next Stop: Penn Ave at Sheridan Ave</Text>
                   <View style={styles.stopsLabel}>
-                    <Text style={styles.stopsLabelText}>60 stops</Text>
+                    <Text style={styles.stopsLabelText}>Ride for 20 stops</Text>
                   </View>
                 </View>
                 <Text style={styles.transferTime}>3:39 PM</Text>
               </View>
+
             </View>
           </View>
 
@@ -170,14 +157,30 @@ export default function SearchPaige({ navigation }: Props) {
               <View style={[styles.timelineDot, styles.smallDot]} />
               <View style={styles.timelineLine} />
             </View>
+
+          </View>
+
+          <View style={styles.stepContainer}>
+            <View style={styles.timeline}>
+              <View style={[styles.timelineDot, styles.smallDot]} />
+              <View style={styles.timelineLine} />
+            </View>
+
             <View style={styles.stepContent}>
-              <View style={styles.transferRow}>
-                <View style={styles.transferDot} />
-                <Text style={styles.transferText}>Fifth Ave at Tennyson Ave</Text>
-                <Text style={styles.transferTime}>3:51 PM</Text>
+              <View style={styles.routeCard}>
+                <View style={styles.busHeader}>
+                  <Image
+                    source={require('./assets/busicon.png')}
+                    style={styles.busIcon}
+                  />
+                  <Text style={styles.busRouteText}>
+                    Get off at Forbes Ave at Halket Ave
+                  </Text>
+                </View>
               </View>
             </View>
           </View>
+
 
           {/* Walk to destination */}
           <View style={styles.stepContainer}>

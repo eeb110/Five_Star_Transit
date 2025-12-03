@@ -55,6 +55,10 @@ export default function AccessibilitySafetyScreen({ navigation }: Props) {
         </View>
         <View style={styles.divider} />
 
+        <Text style={styles.sectionTitle}>Transit Mode Priority</Text>
+        <Text style={styles.sublabel}>
+          Rank modes of transit from most to least preferred.
+        </Text>
         {/* Transport Priority List */}
         <TransportPriorityList />
 

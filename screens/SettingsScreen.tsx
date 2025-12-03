@@ -67,9 +67,10 @@ export default function SettingsScreen({ navigation }) {
           </View>
 
           {/* ---- SLIDERS ---- */}
+          <CustomSlider label="Prioritize Cheaper Routes" />
           <CustomSlider label="Prioritize Calorie Burning Routes" />
           <CustomSlider label="Prioritize CO2 Saving Routes" />
-          <CustomSlider label="Prioritize Cheaper Routes" />
+
 
         </View>
       </View>

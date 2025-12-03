@@ -71,6 +71,7 @@ export default function BookmarksScreen({ navigation }: Props) {
           showsVerticalScrollIndicator={false}
         >
           <Text style={styles.sectionTitle}>Your Bookmarks</Text>
+          <Text style={styles.subtitle}>Saved locally to your device.</Text>
 
           <View style={styles.bookmarksGrid}>
             {bookmarkedLocations.map((location) => (
@@ -215,7 +216,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: '700',
     color: '#333',
-    marginBottom: 16,
   },
   bookmarksGrid: {
     flexDirection: 'row',
@@ -281,5 +281,11 @@ const styles = StyleSheet.create({
     fontSize: 32,
     color: 'white',
     fontWeight: '300',
+  },
+  subtitle: {
+      fontSize: 14,
+      color: 'black',
+      marginBottom: 12,
+      fontWeight: '500',
   },
 });

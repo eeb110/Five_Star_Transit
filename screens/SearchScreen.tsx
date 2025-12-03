@@ -95,7 +95,7 @@ export default function SearchScreen({ navigation }: Props) {
               busRoute="81/83"
               leaveTime="3:49 PM"
               status="Delayed 5 mins"
-              onGoPress={() => navigation.navigate("SearchPaige")}
+              //onGoPress={() => navigation.navigate("SearchPaige")}
               ETA="20 mins"
               statusColor="red"
             />

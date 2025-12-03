@@ -32,19 +32,29 @@ export default function NotificationsScreen({ navigation }: Props) {
       </Text>
 
       <View style={styles.row}>
-        <Text style={styles.rowLabel}>Receive All Route Updates</Text>
+        <View style={{ flexShrink: 1 }}>
+          <Text style={styles.rowLabel}>Receive All Route Updates</Text>
+          <Text style={styles.subLabel}>All delays, changes, and advisories</Text>
+        </View>
         <Switch value={receiveAll} onValueChange={setReceiveAll} />
       </View>
 
       <View style={styles.row}>
-        <Text style={styles.rowLabel}>Only Receive Critical Route Alerts</Text>
+        <View style={{ flexShrink: 1 }}>
+          <Text style={styles.rowLabel}>Only Critical Alerts</Text>
+          <Text style={styles.subLabel}>Major service disruptions only</Text>
+        </View>
         <Switch value={receiveCritical} onValueChange={setReceiveCritical} />
       </View>
 
       <View style={styles.row}>
-        <Text style={styles.rowLabel}>Only Receive Moderate Route Alerts</Text>
+        <View style={{ flexShrink: 1 }}>
+          <Text style={styles.rowLabel}>Only Moderate Alerts</Text>
+          <Text style={styles.subLabel}>Minor delays & slowdowns</Text>
+        </View>
         <Switch value={receiveModerate} onValueChange={setReceiveModerate} />
       </View>
+
 
       <View style={styles.divider} />
 
@@ -53,7 +63,7 @@ export default function NotificationsScreen({ navigation }: Props) {
       <Text style={styles.sectionDescription}>certain vibration alerts</Text>
 
       <View style={styles.row}>
-        <Text style={styles.rowLabel}>Enable Haptics</Text>
+        <Text style={styles.rowLabel}>Enable Vibration for Alerts</Text>
         <Switch value={haptic} onValueChange={setHaptic} />
       </View>
 
@@ -134,4 +144,11 @@ const styles = StyleSheet.create({
     opacity: 0.3,
     marginVertical: 20,
   },
+
+  subLabel: {
+    fontSize: 12,
+    color: "#c4d3df",
+    marginTop: 2,
+  }
+
 });

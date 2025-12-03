@@ -10,7 +10,7 @@ export default function TicketsScreen({ navigation }: Props) {
   const [fareTypeOpen, setFareTypeOpen] = useState(false);
   const [passTypeOpen, setPassTypeOpen] = useState(false);
 
-  const fareTypes = ["Incline Only", "Bus + Incline Pass"];
+  const fareTypes = ["Incline Only", "Bus Pass (Incline Included)"];
 
   const passOptions: { [key: string]: { name: string; price: string }[] } = {
     "Incline Only": [

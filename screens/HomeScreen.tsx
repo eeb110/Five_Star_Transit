@@ -25,7 +25,7 @@ export default function HomeScreen({ navigation }: Props) {
         <View style={styles.searchContainer}>
           <TextInput
             style={styles.input}
-            placeholder="Search bus routes"
+            placeholder="Search destinations"
             placeholderTextColor="#555"
             value={query}
             onChangeText={setQuery}
